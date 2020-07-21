@@ -56,6 +56,8 @@ class downloadLoop:
 		l = pd.DataFrame([])
 		c = pd.DataFrame([])
 		v = pd.DataFrame([])
+		error = pd.DataFrame([])
+
 		dfList = [o,h,l,c,v]
 
 		for each in range(begin_range, end_range):
@@ -148,8 +150,8 @@ class downloadLoop:
 
 		pass
 
-#crate a loop !
 
+#=================================================[execute :P]=================================================#
 index_list = pd.read_csv('ticker.csv', header=None)
 
 #get ticker dataframe
@@ -165,14 +167,5 @@ end_range = input("end_begin: ")
 end_range = int(end_range)
 wait = input("wait_time: ")
 wait = int(wait)
-
-error = pd.DataFrame([])
-#=================================================[Loop]=================================================#
-o = pd.DataFrame([])
-h = pd.DataFrame([])
-l = pd.DataFrame([])
-c = pd.DataFrame([])
-v = pd.DataFrame([])
-
 
 looper = downloadLoop().loopArray(begin_range,end_range,days,wait)
